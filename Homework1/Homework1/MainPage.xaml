@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Homework1"
+             x:Class="Homework1.MainPage"
+             BackgroundColor="DarkGray">
+    
+    <!-- Define the resources of the page -->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame">
+                <Setter Property="HeightRequest" Value="75"/>
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="BackgroundColor" Value="Gray"/>
+            </Style>
+
+            <Style x:Key="LabelPost" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="LightBlue"/>
+            </Style>
+                   
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+        <!-- Set the padding -->
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0, 20, 0, 0"/>
+    </ContentPage.Padding>
+    
+    <!-- Page Body -->
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- Cover Photo -->
+            <Image x:Name="coverImage"
+                   Grid.Row="0"
+                   Grid.RowSpan="2"
+                   HeightRequest="150"
+                   Aspect="Fill"
+                   Grid.ColumnSpan="2"/>
+            
+            <!-- Profile Picture -->
+            <Image x:Name="profileImage"
+                   Grid.Row="1"
+                   Grid.RowSpan="2"
+                   Aspect="Fill"
+                   HeightRequest="100"
+                   Grid.Column="0"
+                   Margin="5"/>
+            
+            <!-- Name -->
+            <Label Text="Xamarin.Forms"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   TextColor="White"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   FontSize="Medium"/>
+
+            <!-- Posts -->
+            <StackLayout Grid.Row="3"
+                         Grid.ColumnSpan="2">
+                <Frame>
+                    <Label Style="{DynamicResource LabelPost}"
+                           Text="This is another post"/>
+                </Frame>
+
+                <Frame>
+                    <Label Style="{DynamicResource LabelPost}"
+                           Text="This is another post"/>
+                </Frame>
+
+                <Frame>
+                    <Label Style="{DynamicResource LabelPost}"
+                           Text="This is another post"/>
+                </Frame>
+
+                <Frame>
+                    <Label Style="{DynamicResource LabelPost}"
+                           Text="This is another post"/>
+                </Frame>
+
+                <Frame>
+                    <Label Style="{DynamicResource LabelPost}"
+                           Text="This is another post"/>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+    
+</ContentPage>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Homework1.SettingsWindow"
+             BackgroundColor="Navy">
+    <!-- Define the resources  -->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="Micro"/>
+            </Style>
+
+            <Style TargetType="Switch">
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="OnColor" Value="LightBlue"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0, 20, 0, 0"/>
+    </ContentPage.Padding>
+
+    <Grid>
+        <!-- Define the rows -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Define Columns -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.7*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Label -->
+        <Label HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Margin="5"
+               Grid.Row="0"
+               Grid.ColumnSpan="2"
+               TextColor="White"
+               Text="Settings"/>
+        
+        <!-- Dark Mode -->
+        <Label Style="{DynamicResource LabelStyle}"
+               Text="Dark Mode"
+               Grid.Row="1"
+               Grid.Column="0"/>
+
+        <Switch Grid.Row="1"
+                Grid.Column="1"/>
+
+        <!-- Start up with System -->
+        <Label Style="{DynamicResource LabelStyle}"
+               Text="Run with System"
+               Grid.Row="2"
+               Grid.Column="0"/>
+
+        <Switch Grid.Row="2"
+                Grid.Column="1"/>
+
+        <!-- Show Notifications -->
+        <Label Style="{DynamicResource LabelStyle}"
+               Text="Show Notifications"
+               Grid.Row="3"
+               Grid.Column="0"/>
+
+        <Switch Grid.Row="3"
+                Grid.Column="1"/>
+
+       <!-- Save Button -->
+        <Button BackgroundColor="LightGray"
+                TextColor="DarkBlue"
+                Grid.Row="5"
+                Grid.ColumnSpan="2"
+                Margin="10"
+                Clicked="btnSave_Clicked"
+                x:Name="btnSave"
+                Text="Save Settings"/>
+
+    </Grid>
+    
+</ContentPage>
